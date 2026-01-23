@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Calm, near-black neutral palette inspired by Apple-style dark mode */
+    --color-background: 222 22% 8%;
+    --color-foreground: 210 40% 96%;
+    --color-primary: 220 90% 60%; /* soft, confident blue for CTAs */
+    --color-primary-foreground: 220 20% 10%;
+    --color-secondary: 222 22% 12%;
+    --color-secondary-foreground: 210 40% 96%;
+    --color-accent: 222 18% 18%;
+    --color-accent-foreground: 210 40% 96%;
+    --color-muted: 222 16% 20%;
+    --color-muted-foreground: 215 16% 70%;
+    --color-border: 220 18% 22%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+
+
+
+
