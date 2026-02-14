@@ -4,11 +4,11 @@ A modern, high-performance portfolio website built with Next.js, Tailwind CSS, a
 
 ## Tech Stack
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion**
-- **Dark Mode** (default)
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Dark Mode (default)
 
 ## Project Structure
 
@@ -30,29 +30,16 @@ Portfolio/
 └── public/               # Static assets
 ```
 
-## Getting Started
+Getting Started
+Features
 
-1. Install dependencies:
-```bash
-npm install
-```
-
-2. Run the development server:
-```bash
-npm run dev
-```
-
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Features
-
-- ✅ Dark mode by default
-- ✅ SEO-friendly metadata
-- ✅ Smooth animations with Framer Motion
-- ✅ Responsive design
-- ✅ TypeScript support
-- ✅ Scalable component architecture
-- ✅ Custom hooks for common patterns
+-  Dark mode by default
+-  SEO-friendly metadata
+-  Smooth animations with Framer Motion
+-  Responsive design
+-  TypeScript support
+-  Scalable component architecture
+-  Custom hooks for common patterns
 
 ## Component Architecture
 
