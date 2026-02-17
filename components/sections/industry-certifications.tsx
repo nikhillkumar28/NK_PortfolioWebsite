@@ -16,8 +16,8 @@ interface Certification {
 
 const CERTIFICATIONS: Certification[] = [
   {
-    title: 'AWS Certified Cloud Practitioner',
-    organization: 'Amazon Web Services',
+    title: 'Bits and Bytes of Computer Networking',
+    organization: 'Google',
     year: 2024,
     credentialUrl: '#',
   },
@@ -34,8 +34,8 @@ const CERTIFICATIONS: Certification[] = [
     credentialUrl: '#',
   },
   {
-    title: 'Bits and Bytes of Computer Networking',
-    organization: 'Google',
+    title: 'CSS',
+    organization: 'HackerRank',
     year: 2025,
     credentialUrl: '#',
   },
