@@ -18,14 +18,32 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true)
-    // Dark mode by default
-    document.documentElement.classList.add('dark')
+    // Check localStorage first, default to dark mode
+    const savedTheme = localStorage.getItem('theme') as Theme | null
+    const defaultTheme = savedTheme || 'dark'
+    
+    setTheme(defaultTheme)
+    if (defaultTheme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
   }, [])
+
+  const setThemeWithStorage = (newTheme: Theme) => {
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme)
+    
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-    document.documentElement.classList.toggle('dark')
+    setThemeWithStorage(newTheme)
   }
 
   if (!mounted) {
@@ -33,7 +51,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme: setThemeWithStorage, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )
@@ -46,6 +64,9 @@ export function useTheme() {
   }
   return context
 }
+
+
+
 
 
 

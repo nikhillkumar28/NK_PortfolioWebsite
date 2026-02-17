@@ -4,23 +4,97 @@
 
 @layer base {
   :root {
-    /* Calm, near-black neutral palette inspired by Apple-style dark mode */
-    --color-background: 222 22% 8%;
-    --color-foreground: 210 40% 96%;
-    --color-primary: 220 90% 60%; /* soft, confident blue for CTAs */
-    --color-primary-foreground: 220 20% 10%;
-    --color-secondary: 222 22% 12%;
-    --color-secondary-foreground: 210 40% 96%;
-    --color-accent: 222 18% 18%;
-    --color-accent-foreground: 210 40% 96%;
-    --color-muted: 222 16% 20%;
-    --color-muted-foreground: 215 16% 70%;
-    --color-border: 220 18% 22%;
+    /* Light mode professional palette */
+    /* Background - white/very light */
+    --color-background: 0 0% 100%;
+    --color-foreground: 222 47% 11%; /* Dark text for headings */
+    
+    /* Primary accent - professional blue (buttons, links, badges, hover) */
+    --color-primary: 217 91% 60%; /* Confident blue */
+    --color-primary-foreground: 0 0% 100%; /* White text on primary */
+    
+    /* Secondary - very light gray for cards */
+    --color-secondary: 210 20% 98%;
+    --color-secondary-foreground: 222 47% 11%;
+    
+    /* Neutral accent - subtle slate for subtle highlights */
+    --color-accent: 215 16% 47%; /* Neutral gray-blue */
+    --color-accent-foreground: 222 47% 11%;
+    
+    /* Muted - light gray for subtle backgrounds */
+    --color-muted: 210 20% 96%;
+    --color-muted-foreground: 215 16% 47%; /* Medium gray for body text */
+    
+    /* Border - subtle gray */
+    --color-border: 214 32% 91%;
+    
+    /* Border radius - consistent rounded-xl */
+    --radius-sm: 0.375rem; /* 6px */
+    --radius-md: 0.5rem; /* 8px */
+    --radius-lg: 0.75rem; /* 12px */
+    --radius-xl: 1rem; /* 16px - primary */
+    --radius-full: 9999px;
+    
+    /* Shadows - soft, subtle depth with consistent transitions */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
 
+  .dark {
+    /* Dark mode professional palette */
+    /* Background - Deep slate (not black) */
+    --color-background: 222 47% 11%; /* #0F172A */
+    
+    /* Secondary Section Background - Slight variation for depth */
+    --color-secondary: 222 39% 13%; /* #111827 */
+    
+    /* Card Surface */
+    --color-accent: 217 33% 17%; /* #1E293B */
+    
+    /* Card Hover Surface */
+    --color-accent-foreground: 216 34% 21%; /* #243044 */
+    
+    /* Borders */
+    --color-border: 215 25% 25%; /* #2E3A4A */
+    
+    /* Primary Accent - Professional Blue */
+    --color-primary: 222 84% 63%; /* #4F7DF3 */
+    --color-primary-foreground: 210 40% 98%; /* Accent Foreground */
+    
+    /* Text System */
+    --color-foreground: 210 32% 91%; /* Headline */
+    --color-muted-foreground: 215 20% 65%; /* Supporting Paragraph */
+    --color-muted: 215 16% 47%; /* Low Emphasis / Labels */
+    
+    /* Name (Highest Contrast) - using secondary-foreground */
+    --color-secondary-foreground: 210 40% 98%; /* #F8FAFC */
+    
+    /* Tech Pill Background */
+    --color-card: 217 28% 20%; /* #1E293B alternative */
+    
+    /* Shadows - more visible in dark mode */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.25);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  }
+  
+  /* Global utilities */
   * {
     @apply border-border;
   }
+
+  /* Global transition utilities - selective for performance */
+.card-hover, button, .btn, [data-hover] {
+  transition: all 150ms ease-out;
+}
+
+/* Disable transitions on specific elements for performance */
+.no-transition {
+  transition: none !important;
+}
 
   body {
     @apply bg-background text-foreground antialiased;
@@ -29,6 +103,68 @@
   html {
     @apply scroll-smooth;
   }
+  
+  /* Enhanced text hierarchy - professional and recruiter-focused */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    color: hsl(var(--color-foreground));
+    line-height: 1.1;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+  
+  h2 {
+    color: hsl(var(--color-foreground));
+    letter-spacing: -0.01em;
+    font-weight: 650;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  h3 {
+    color: hsl(var(--color-foreground));
+    letter-spacing: -0.005em;
+    font-weight: 600;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+  }
+  
+  p {
+    color: hsl(var(--color-muted-foreground));
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  
+  /* Subtitle styling - professional and clean */
+  .subtitle {
+    color: hsl(var(--color-muted-foreground));
+    font-weight: 400;
+    opacity: 0.85;
+    line-height: 1.6;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+  
+  /* Professional text utilities */
+  .text-professional {
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+  
+  .text-strong {
+    font-weight: 600;
+    color: hsl(var(--color-foreground));
+  }
+  
+  /* Name styling */
+  .text-name {
+    color: hsl(var(--color-foreground));
+    font-weight: 600;
+  }
 }
 
 @layer utilities {
@@ -36,9 +172,3 @@
     text-wrap: balance;
   }
 }
-
-
-
-
-
-

@@ -7,12 +7,13 @@ export const SITE_CONFIG = {
   author: 'AI/ML Developer',
 } as const
 
-// Navigation items
+// Navigation items (matches section order on homepage)
 export const NAV_ITEMS = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '#about' },
+  { label: 'Live Demos', href: '#demos' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'AI & Research', href: '#ai-research' },
   { label: 'Contact', href: '#contact' },
 ] as const
 
@@ -22,6 +23,9 @@ export const SOCIAL_LINKS = [
   // { platform: 'LinkedIn', url: 'https://linkedin.com/in/username' },
   // { platform: 'Twitter', url: 'https://twitter.com/username' },
 ] as const
+
+
+
 
 
 

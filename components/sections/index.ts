@@ -2,11 +2,10 @@
 export { Hero } from './hero'
 export { Skills } from './skills'
 export { Projects } from './projects'
+export { IndustryCertifications } from './industry-certifications'
+export { CompetitiveCoding } from './competitive-coding'
 export { LiveDemos } from './live-demos'
-export { LearningGrowth } from './learning-growth'
 export { AiResearch } from './ai-research'
+export { LearningGrowth } from './learning-growth'
+export { InternshipReadiness } from './internship-readiness'
 export { ResumeContact } from './resume-contact'
-
-
-
-

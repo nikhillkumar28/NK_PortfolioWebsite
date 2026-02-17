@@ -1,65 +1,95 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Section } from '@/components/ui/section'
 import { Button } from '@/components/ui/button'
-import { FiDownload, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
+import { fadeInUp } from '@/lib/animations'
+import { FiFileText, FiGithub, FiLinkedin, FiMail, FiCalendar } from 'react-icons/fi'
 
 export function ResumeContact() {
   return (
     <Section
       id="contact"
       title="Resume & Contact"
-      subtitle="Quick ways to review my work and get in touch"
+      subtitle="Let's connect"
       className="pt-0"
     >
-      <div className="max-w-3xl mx-auto flex flex-col items-center gap-6">
-        {/* Primary CTA */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full sm:justify-center">
+      <motion.div
+        variants={fadeInUp}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="max-w-2xl mx-auto"
+      >
+        {/* Availability Banner */}
+        <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/20 text-center shadow-sm">
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <FiCalendar className="w-4 h-4 text-primary" />
+            <span className="text-sm font-semibold text-primary">Currently Available</span>
+          </div>
+          <p className="text-sm text-foreground/80">
+            Open to <span className="font-medium">Summer 2026 Internship</span> or <span className="font-medium">6-month Internship</span> roles
+          </p>
+        </div>
+
+        {/* Primary CTA: Resume */}
+        <div className="flex justify-center mb-6">
           <Button
             href="/resume.pdf"
             variant="primary"
             size="lg"
-            className="w-full sm:w-auto min-w-[180px]"
+            className="min-w-[260px]"
           >
-            <FiDownload className="w-4 h-4 mr-2" />
-            Download Resume
+            <FiFileText className="w-4 h-4 mr-2" />
+            View 1-Page Internship Resume
           </Button>
         </div>
 
-        {/* Secondary links */}
-        <div className="flex flex-wrap justify-center gap-3 text-sm">
-          <Button
-            href="https://github.com/your-username"
-            variant="outline"
-            size="sm"
-            className="min-w-[140px]"
+        {/* Prominent GitHub & LinkedIn */}
+        <div className="flex flex-col sm:flex-row justify-center gap-3 mb-6">
+          <a
+            href="https://github.com/nikhillkumar28"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-secondary border border-border/50 hover:bg-secondary/80 hover:border-primary/30 transition-all shadow-sm hover:shadow-md group"
           >
-            <FiGithub className="w-4 h-4 mr-2" />
-            GitHub
-          </Button>
-          <Button
-            href="https://linkedin.com/in/your-username"
-            variant="outline"
-            size="sm"
-            className="min-w-[140px]"
+            <FiGithub className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
+            <div className="text-left">
+              <p className="text-sm font-semibold text-foreground">GitHub</p>
+              <p className="text-xs text-muted-foreground">View source code & contributions</p>
+            </div>
+          </a>
+          <a
+            href="https://linkedin.com/in/nikhillkumar28"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-secondary border border-border/50 hover:bg-secondary/80 hover:border-primary/30 transition-all shadow-sm hover:shadow-md group"
           >
-            <FiLinkedin className="w-4 h-4 mr-2" />
-            LinkedIn
-          </Button>
-          <Button
-            href="mailto:your.email@example.com"
-            variant="outline"
-            size="sm"
-            className="min-w-[160px]"
-          >
-            <FiMail className="w-4 h-4 mr-2" />
-            Email Me
-          </Button>
+            <FiLinkedin className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
+            <div className="text-left">
+              <p className="text-sm font-semibold text-foreground">LinkedIn</p>
+              <p className="text-xs text-muted-foreground">Connect & message me</p>
+            </div>
+          </a>
         </div>
-      </div>
+
+        {/* Email - Secondary */}
+        <div className="text-center">
+          <a
+            href="mailto:nikhilkumarnik28@gmail.com"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+          >
+            <FiMail className="w-4 h-4" />
+            <span>nikhilkumarnik28@gmail.com</span>
+          </a>
+        </div>
+      </motion.div>
     </Section>
   )
 }
+
+
+
 
 
 

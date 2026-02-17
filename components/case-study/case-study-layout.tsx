@@ -76,7 +76,7 @@ export function CaseStudyLayout({
               {/* Right: Quick summary */}
               <motion.div
                 variants={fadeInUp}
-                className="rounded-lg border border-border bg-secondary/40 p-4 md:p-5 text-sm space-y-3"
+                className="rounded-xl border border-border/50 bg-secondary/40 p-4 md:p-5 text-sm space-y-3 shadow-sm"
               >
                 {meta.role && (
                   <div className="flex items-start justify-between gap-4">

@@ -1,7 +1,7 @@
 // Personal branding content for placements and internships
 
 export const BRANDING = {
-  name: "Nikhil",
+  name: "Nikhil Kumar",
   headline: "I build intelligent AI systems and modern full-stack applications.",
   
   roleTitles: [

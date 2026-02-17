@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Section } from '@/components/ui/section'
 import { Card } from '@/components/ui/card'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { fadeInUp, fadeInUpCard, staggerContainer } from '@/lib/animations'
 import {
   SiKubernetes,
   SiDocker,
@@ -88,29 +88,29 @@ export function LearningGrowth() {
     <Section
       id="learning"
       title="Learning & Growth"
-      subtitle="Continuously expanding expertise and exploring new frontiers"
+      subtitle="Actively studying systems I haven't built yet"
     >
       <motion.div
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: '-50px' }}
-        className="space-y-8 md:space-y-10"
+        className="space-y-10 md:space-y-12"
       >
         {/* Intro statement */}
         <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto">
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Building on a solid foundation, I'm actively deepening expertise in backend systems,
-            exploring advanced ML concepts, and expanding my toolkit with production-grade technologies.
-            This continuous learning directly informs the projects I build.
+            Beyond what I've shipped, I'm studying distributed systems, advanced ML deployment patterns,
+            and infrastructure tools used at scale. These are areas I'm actively learning through
+            coursework, documentation, and side experiments — not production experience yet.
           </p>
         </motion.div>
 
         {/* Three columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {/* Backend Skills */}
-          <motion.div variants={fadeInUp}>
-            <Card className="h-full bg-secondary/30 border-border/60">
+          <motion.div variants={fadeInUpCard}>
+            <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
               <div className="flex items-center gap-2 mb-4">
                 <FiCode className="w-5 h-5 text-primary" />
                 <h3 className="text-lg font-semibold text-foreground">Backend Systems</h3>
@@ -140,14 +140,14 @@ export function LearningGrowth() {
           </motion.div>
 
           {/* ML Concepts */}
-          <motion.div variants={fadeInUp}>
-            <Card className="h-full bg-secondary/30 border-border/60">
+          <motion.div variants={fadeInUpCard}>
+            <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
               <div className="flex items-center gap-2 mb-4">
                 <FiZap className="w-5 h-5 text-primary" />
                 <h3 className="text-lg font-semibold text-foreground">ML Concepts</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Exploring advanced patterns for production ML systems
+                Learning MLOps and production deployment patterns
               </p>
               <ul className="space-y-3">
                 {ML_LEARNING.map((item) => {
@@ -171,14 +171,14 @@ export function LearningGrowth() {
           </motion.div>
 
           {/* Tools & Frameworks */}
-          <motion.div variants={fadeInUp}>
-            <Card className="h-full bg-secondary/30 border-border/60">
+          <motion.div variants={fadeInUpCard}>
+            <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
               <div className="flex items-center gap-2 mb-4">
                 <FiTrendingUp className="w-5 h-5 text-primary" />
                 <h3 className="text-lg font-semibold text-foreground">Tools & Frameworks</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
-                Adding production-grade tools to the toolkit
+                Exploring industry-standard infrastructure tools
               </p>
               <ul className="space-y-3">
                 {TOOLS_LEARNING.map((item) => {
@@ -207,9 +207,9 @@ export function LearningGrowth() {
           variants={fadeInUp}
           className="text-center pt-4 border-t border-border/40"
         >
-          <p className="text-sm text-muted-foreground italic">
-            "The best way to learn is by building. Every project is an opportunity to apply new
-            concepts and refine existing skills."
+          <p className="text-sm text-muted-foreground">
+            I distinguish between what I've shipped and what I'm still learning.
+            These topics represent active study, not claimed expertise.
           </p>
         </motion.div>
       </motion.div>
