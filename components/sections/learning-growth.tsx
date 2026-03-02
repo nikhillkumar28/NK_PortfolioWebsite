@@ -113,7 +113,7 @@ export function LearningGrowth() {
             <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
               <div className="flex items-center gap-2 mb-4">
                 <FiCode className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold text-foreground">Backend Systems</h3>
+                <h3 className="text-lg font-medium text-foreground">Backend Systems</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 Refining and expanding backend architecture skills
@@ -144,7 +144,7 @@ export function LearningGrowth() {
             <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
               <div className="flex items-center gap-2 mb-4">
                 <FiZap className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold text-foreground">ML Concepts</h3>
+                <h3 className="text-lg font-medium text-foreground">ML Concepts</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 Learning MLOps and production deployment patterns
@@ -175,7 +175,7 @@ export function LearningGrowth() {
             <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
               <div className="flex items-center gap-2 mb-4">
                 <FiTrendingUp className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold text-foreground">Tools & Frameworks</h3>
+                <h3 className="text-lg font-medium text-foreground">Tools & Frameworks</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-4">
                 Exploring industry-standard infrastructure tools

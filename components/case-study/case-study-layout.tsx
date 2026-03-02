@@ -48,7 +48,7 @@ export function CaseStudyLayout({
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header className="border-b border-border/60 bg-background/80 backdrop-blur" />
 
-      <main className="flex-1">
+      <main className="flex-1 pt-20 md:pt-24">
         {/* Hero / summary */}
         <section className="border-b border-border/60 bg-gradient-to-b from-background to-background/80">
           <div className="container mx-auto px-4 py-10 md:py-16">
@@ -199,7 +199,7 @@ function ContentSection({ title, children }: ContentSectionProps) {
       viewport={{ once: true, margin: "-80px" }}
       className="space-y-3 md:space-y-4"
     >
-      <h2 className="text-xl md:text-2xl font-semibold">{title}</h2>
+      <h2 className="text-xl md:text-2xl font-medium">{title}</h2>
       <div className="prose prose-invert prose-sm md:prose-base max-w-none">
         {children}
       </div>

@@ -28,14 +28,14 @@ const CERTIFICATIONS: Certification[] = [
     credentialUrl: '#',
   },
   {
-    title: 'Python',
-    organization: 'HackerRank',
+    title: 'Bits and Bytes of Computer Networking',
+    organization: 'Google',
     year: 2023,
     credentialUrl: '#',
   },
   {
-    title: 'Bits and Bytes of Computer Networking',
-    organization: 'Google',
+    title: 'Python',
+    organization: 'HackerRank',
     year: 2025,
     credentialUrl: '#',
   },
@@ -66,7 +66,7 @@ export function IndustryCertifications() {
             <Card disableInitialAnimation>
               {/* Certification Header */}
               <div className="mb-4">
-                <h3 className="text-lg md:text-xl font-semibold text-foreground leading-tight mb-1">
+                <h3 className="text-lg md:text-xl font-medium text-foreground leading-tight mb-1">
                   {certification.title}
                 </h3>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">

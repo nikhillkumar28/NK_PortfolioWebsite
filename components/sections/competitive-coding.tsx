@@ -31,24 +31,24 @@ const PROFILES: ProfileCard[] = [
     username: 'nikhilkumarnik28',
     icon: SiLeetcode,
     stats: [
-      { label: 'Problems Solved', value: '100+' },
+      { label: 'Problems Solved', value: '120+' },
       { label: 'Contest Rating', value: '1650' },
-      { label: 'Global Rank', value: 'Top 15%' },
+      { label: 'Global Rank', value: 'Top 10%' },
     ],
     profileUrl: 'https://leetcode.com/u/nikhilkumarnik28/',
-    accentColor: 'text-orange-500',
+    accentColor: 'text-blue-400',
   },
   {
     platform: 'HackerRank',
     username: 'nikhillkumar28',
     icon: SiHackerrank,
     stats: [
-      { label: 'Problems Solved', value: '200+' },
+      { label: 'Problems Solved', value: '100+' },
       { label: 'Contest Rating', value: '4 stars' },
       { label: 'Badges Earned', value: '3' },
     ],
     profileUrl: 'https://www.hackerrank.com/profile/nikhillkumar28',
-    accentColor: 'text-green-500',
+    accentColor: 'text-blue-400',
   },
   {
     platform: 'GitHub',
@@ -60,19 +60,19 @@ const PROFILES: ProfileCard[] = [
       { label: 'Contributions', value: '100+' },
     ],
     profileUrl: 'https://github.com/nikhillkumar28',
-    accentColor: 'text-gray-700',
+    accentColor: 'text-slate-300',
   },
   {
     platform: 'Codeforces',
     username: 'yourusername',
     icon: SiCodeforces,
     stats: [
-      { label: 'Problems Solved', value: '180+' },
-      { label: 'Contest Rating', value: '1450' },
-      { label: 'Max Rating', value: '1600' },
+      { label: 'Problems Solved', value: '50+' },
+      { label: 'Contest Rating', value: 'NA' },
+      { label: 'Max Rating', value: 'NA' },
     ],
     profileUrl: 'https://codeforces.com/yourusername',
-    accentColor: 'text-blue-500',
+    accentColor: 'text-blue-400',
   },
 ]
 
@@ -101,7 +101,7 @@ export function CompetitiveCoding() {
                     <PlatformIcon className={`w-5 h-5 ${profile.accentColor}`} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-foreground">
+                    <h3 className="text-lg font-medium text-foreground">
                       {profile.platform}
                     </h3>
                     <p className="text-sm text-muted-foreground">

@@ -13,7 +13,6 @@ export function AiResearch() {
       id="ai-research"
       title="AI & Research"
       subtitle="Applied machine learning with production-ready system architecture"
-      className="pt-0 md:pt-0"
     >
       <motion.div
         variants={staggerContainer}
@@ -27,7 +26,7 @@ export function AiResearch() {
           {/* NLP Models Built */}
           <motion.div variants={fadeInUpCard}>
             <Card disableInitialAnimation className="h-full p-5 md:p-6 bg-secondary/40 border-border/50">
-              <h3 className="text-lg md:text-xl font-semibold mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-medium mb-3 flex items-center gap-2">
                 <FiCpu className="w-4 h-4 text-primary" />
                 NLP Models Built
               </h3>
@@ -70,7 +69,7 @@ export function AiResearch() {
           {/* Transformer & Embeddings */}
           <motion.div variants={fadeInUpCard}>
             <Card disableInitialAnimation className="h-full p-5 md:p-6 bg-secondary/40 border-border/50">
-              <h3 className="text-lg md:text-xl font-semibold mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-medium mb-3 flex items-center gap-2">
                 <FiMessageSquare className="w-4 h-4 text-primary" />
                 Transformer & Embedding Work
               </h3>
@@ -97,9 +96,6 @@ export function AiResearch() {
                   </div>
                 </li>
               </ul>
-              <p className="mt-4 text-xs text-muted-foreground italic">
-                I understand the attention mechanism conceptually and know when Transformer overhead is justified vs. simpler approaches.
-              </p>
             </Card>
           </motion.div>
         </div>

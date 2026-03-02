@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 
 interface FooterProps {
   className?: string
@@ -15,22 +16,39 @@ export function Footer({ className }: FooterProps) {
       transition={{ duration: 0.5 }}
       className={className}
     >
-      <div className="container mx-auto px-4 py-8 border-t border-border/60">
-        <div className="flex flex-col items-center justify-between gap-3 text-center text-xs md:text-sm text-muted-foreground md:flex-row">
-          <p className="order-2 md:order-1">
-            Built with Next.js, TypeScript, and a focus on real-world AI &amp; full-stack work.
-          </p>
-          <p className="order-1 md:order-2">
-            © {new Date().getFullYear()} AI/ML Portfolio
-          </p>
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-8 border-t border-slate-800 text-slate-400 text-sm">
+        <div className="flex flex-col items-center gap-3 text-center">
+          <p>Nikhil Kumar</p>
+          <p>(c) {new Date().getFullYear()} Nikhil Kumar. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/nikhillkumar28"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="hover:text-blue-400 transition-colors duration-300"
+            >
+              <FiGithub className="w-4 h-4" />
+            </a>
+            <a
+              href="https://linkedin.com/in/nikhillkumar28"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="hover:text-blue-400 transition-colors duration-300"
+            >
+              <FiLinkedin className="w-4 h-4" />
+            </a>
+            <a
+              href="mailto:nikhilkumarnik28@gmail.com"
+              aria-label="Email"
+              className="hover:text-blue-400 transition-colors duration-300"
+            >
+              <FiMail className="w-4 h-4" />
+            </a>
+          </div>
         </div>
       </div>
     </motion.footer>
   )
 }
-
-
-
-
-
-

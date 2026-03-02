@@ -54,7 +54,7 @@ export function InternshipReadiness() {
                 <FiTarget className="w-4 h-4 text-primary" />
               </div>
               <div>
-                <h3 className="text-base md:text-lg font-semibold text-foreground">
+                <h3 className="text-base md:text-lg font-medium text-foreground">
                   Prepared to contribute from week one
                 </h3>
                 <p className="text-xs text-muted-foreground">

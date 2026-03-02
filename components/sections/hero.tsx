@@ -3,97 +3,74 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { BRANDING } from '@/lib/branding'
-import { TECH_STACK } from '@/lib/tech-stack'
-import { Button } from '@/components/ui/button'
-import { fadeInUp, staggerContainer } from '@/lib/animations'
 
 export function Hero() {
   const [imageError, setImageError] = useState(false)
 
   return (
-    <section className="relative min-h-screen flex items-center bg-background">
-      <div className="max-w-6xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Image + About */}
-          <motion.div
-            variants={fadeInUp}
-            className="text-center md:text-left"
-          >
-            {/* Profile Image */}
-            <div className="flex justify-center md:justify-start">
-              <div className="rounded-2xl border border-border/50 max-w-sm overflow-hidden bg-secondary/30">
-                {!imageError ? (
-                  <img
-                    src="/profile.jpeg"
-                    alt={BRANDING.name}
-                    className="w-full h-auto object-cover"
-                    onError={() => setImageError(true)}
-                  />
-                ) : (
-                  <div className="w-full h-64 flex items-center justify-center text-foreground/60 text-3xl font-medium">
-                    {BRANDING.name.charAt(0)}
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* About Section */}
-            <div className="mt-8">
-              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-4">
-                Hi , I am Nikhil Kumar 
-              </h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                Pre-final year CS student specializing in full-stack development with a focus on backend engineering and AI integration. I build production-ready applications that solve real-world problems.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Right Column - Headline + Description + Tech Stack */}
-          <motion.div
-            variants={fadeInUp}
-            className="text-center md:text-left"
-          >
-            {/* Small intro line */}
-            <p className="text-sm text-muted-foreground mb-6">
-              Hi, I'm {BRANDING.name}
-            </p>
-
-            {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight text-foreground mb-6">
-              Building scalable web applications<br />
-              and <span className="text-primary">intelligent systems</span>.
+    <motion.section
+      id="home"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="relative py-16 md:py-24 bg-gradient-to-b from-white via-white to-slate-100 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 transition-colors duration-300"
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-6 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-foreground">
+              {BRANDING.name}
             </h1>
 
-            {/* Description Paragraph */}
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
-              Pre-final year CS student focused on backend engineering, production APIs, and integrating AI into real-world products. I enjoy building reliable systems that solve meaningful problems.
+            <h2 className="text-2xl md:text-3xl font-medium leading-tight text-foreground">
+               Full-Stack Developer | Backend &amp; ML
+            </h2>
+
+            <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400">
+              I build backend-focused web applications with clean APIs, reliable data handling, and practical ML integration.
+              I focus on production-ready engineering with maintainable architecture and clear system design.
             </p>
 
-            {/* Tech Stack Section */}
-            <div>
-              <span className="text-sm text-muted-foreground font-medium">Tech Stack:</span>
-              <div className="flex flex-wrap gap-3 mt-4">
-                {['React', 'Next.js', 'Tailwind', 'FastAPI', 'NLP', 'ML'].map((tech, index) => (
-                  <motion.span
-                    key={tech}
-                    variants={fadeInUp}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 + index * 0.05, duration: 0.3 }}
-                    className="px-3 py-1.5 rounded-full bg-card border border-border/50 text-foreground text-sm"
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+              <a
+                href="#projects"
+                className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl transition"
+              >
+                View Projects
+              </a>
+              <a
+                href="/resume.pdf"
+                className="border border-slate-700 text-slate-900 dark:text-slate-100 px-6 py-3 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-300"
+              >
+                Download Resume
+              </a>
             </div>
-          </motion.div>
+          </div>
+
+          <div className="flex justify-center md:justify-end">
+            <div className="w-full max-w-[340px] rounded-2xl overflow-hidden shadow-md bg-slate-100 dark:bg-slate-900 transition-colors duration-300">
+              {!imageError ? (
+                <img
+                  src="/profile.jpeg"
+                  alt={BRANDING.name}
+                  className="block w-full max-h-[360px] object-cover object-center mx-auto"
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="w-full h-64 flex items-center justify-center text-foreground/60 text-3xl font-medium">
+                  {BRANDING.name.charAt(0)}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Subtle bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-    </section>
+      <div className="absolute bottom-0 left-0 right-0 border-t border-slate-800" />
+    </motion.section>
   )
 }
 

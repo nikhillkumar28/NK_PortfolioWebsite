@@ -20,7 +20,6 @@ type DemoType = 'streamlit' | 'fastapi' | 'webapp'
 interface LiveDemo {
   title: string
   description: string
-  whyItMatters: string // Recruiter-focused impact statement
   demoUrl: string
   demoType: DemoType
   appNature: 'API' | 'Web App' | 'ML Interface' // Clear system type
@@ -38,8 +37,6 @@ const DEMOS: LiveDemo[] = [
     title: 'Hindi Next Word Prediction',
     description:
       'LSTM-based language model serving real-time predictions for Hindi text. Trained on Hindi corpus with custom tokenization for Unicode handling.',
-    whyItMatters:
-      'End-to-end NLP: data preprocessing, model training, inference optimization, cloud deployment.',
     demoUrl: '#',
     demoType: 'streamlit',
     appNature: 'ML Interface',
@@ -54,8 +51,6 @@ const DEMOS: LiveDemo[] = [
     title: 'PetBot API',
     description:
       'RESTful API with rate limiting, input validation, and structured JSON responses. Fine-tuned GPT-2 handles intent detection and response generation.',
-    whyItMatters:
-      'Production API patterns: containerized deployment, health checks, structured logging, error handling.',
     demoUrl: '#',
     demoType: 'fastapi',
     appNature: 'API',
@@ -71,8 +66,6 @@ const DEMOS: LiveDemo[] = [
     title: 'Full-Stack Blog Platform',
     description:
       'Next.js app with JWT authentication, PostgreSQL database, role-based access control, and SSR for SEO. Automated deployments via GitHub Actions.',
-    whyItMatters:
-      'Full-stack ownership: auth system, database schema, REST API, frontend, CI/CD pipeline.',
     demoUrl: '#',
     demoType: 'webapp',
     appNature: 'Web App',
@@ -89,19 +82,19 @@ const demoTypeConfig = {
   streamlit: {
     icon: SiStreamlit,
     label: 'Streamlit',
-    color: 'text-red-500',
-    bgColor: 'bg-red-500/10 border-red-500/20',
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-500/10 border-blue-500/20',
   },
   fastapi: {
     icon: SiFastapi,
     label: 'FastAPI',
-    color: 'text-green-500',
-    bgColor: 'bg-green-500/10 border-green-500/20',
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-500/10 border-blue-500/20',
   },
   webapp: {
     icon: FiServer,
     label: 'Web App',
-    color: 'text-blue-500',
+    color: 'text-blue-400',
     bgColor: 'bg-blue-500/10 border-blue-500/20',
   },
 }
@@ -135,7 +128,7 @@ export function LiveDemos() {
                     className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-primary/10 border border-primary/30 backdrop-blur-sm shadow-sm"
                   >
                     <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                    <span className="text-xs font-semibold text-primary">
+                    <span className="text-xs font-medium text-primary">
                       {demo.status === 'live' ? 'LIVE' : 'DEMO'}
                     </span>
                   </motion.div>
@@ -155,19 +148,13 @@ export function LiveDemos() {
 
                 <div className="p-5 pt-16 flex flex-col flex-1">
                   {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground">
+                  <h3 className="text-xl md:text-2xl font-medium mb-3 text-foreground">
                     {demo.title}
                   </h3>
 
                   {/* Description */}
                   <p className="text-sm md:text-base text-muted-foreground mb-3 leading-relaxed">
                     {demo.description}
-                  </p>
-
-                  {/* Why It Matters - Recruiter-focused impact */}
-                  <p className="text-xs text-foreground/70 italic mb-4 leading-relaxed">
-                    <span className="font-medium not-italic text-foreground/90">Why this matters:</span>{' '}
-                    {demo.whyItMatters}
                   </p>
 
                   {/* Deployment & System Info Strip */}
@@ -225,7 +212,7 @@ export function LiveDemos() {
                 </div>
 
                 {/* Subtle gradient overlay for "live" feel */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-transparent to-blue-500/5 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-800/20 via-transparent to-blue-500/10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Card>
             </motion.div>
           )

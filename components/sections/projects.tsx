@@ -1,233 +1,115 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { FiExternalLink, FiGithub } from 'react-icons/fi'
 import { Section } from '@/components/ui/section'
-import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { fadeInUpCard, staggerContainer } from '@/lib/animations'
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiNodedotjs,
-  SiPython,
-  SiFastapi,
-  SiPostgresql,
-  SiMongodb,
-  SiTensorflow,
-  SiPytorch,
-  SiVercel,
-  SiDocker,
-} from 'react-icons/si'
-import { FiExternalLink, FiGithub, FiFileText } from 'react-icons/fi'
-
-interface TechBadge {
-  name: string
-  icon: React.ComponentType<{ className?: string }>
-}
 
 interface Project {
-  title: string
-  problem: string // 1-line problem statement
-  whatIBuilt: string[] // 2 bullet points
-  outcome: string // Engineering outcome / impact
-  demonstrates: string[] // Skills demonstrated
-  techStack: TechBadge[]
+  name: string
+  problemStatement: string
+  solves: string
+  techSummary: string
+  impactOrLearning: string
+  techTags: string[]
   links: {
-    demo?: string
-    github?: string
-    caseStudy?: string
+    github: string
+    demo: string
   }
-  highlight: 'fullstack' | 'ai' | 'deployment'
 }
 
 const PROJECTS: Project[] = [
   {
-    title: 'Full-Stack Blog Website',
-    problem: 'Needed a production-ready CMS with auth, roles, and real-time content updates.',
-    whatIBuilt: [
-      'I designed and built a Next.js app with JWT auth, role-based access, and a PostgreSQL backend.',
-      'I implemented server-side rendering, API routes, and deployed via CI/CD to Vercel.',
-    ],
-    outcome: 'Fully deployed platform handling user sessions, CRUD operations, and optimized page loads.',
-    demonstrates: ['Full-stack architecture', 'REST APIs', 'Auth flows', 'CI/CD'],
-    techStack: [
-      { name: 'Next.js', icon: SiNextdotjs },
-      { name: 'React', icon: SiReact },
-      { name: 'TypeScript', icon: SiTypescript },
-      { name: 'Tailwind CSS', icon: SiTailwindcss },
-      { name: 'Node.js', icon: SiNodedotjs },
-      { name: 'PostgreSQL', icon: SiPostgresql },
-    ],
+    name: 'Full-Stack Blog Website',
+    problemStatement: 'Writers needed a customizable CMS with secure auth and reliable publishing workflows.',
+    solves: 'Provides role-based content management with protected author and admin routes.',
+    techSummary: 'Next.js, React, TypeScript, Node.js API routes, PostgreSQL, Tailwind CSS.',
+    impactOrLearning: 'Strengthened system design for auth flows, CRUD consistency, and production deployment.',
+    techTags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL'],
     links: {
-      demo: '#',
       github: '#',
-      caseStudy: '#',
+      demo: '#',
     },
-    highlight: 'fullstack',
   },
   {
-    title: 'Hindi Next Word Prediction (NLP)',
-    problem: 'No accessible Hindi language model existed for real-time text prediction.',
-    whatIBuilt: [
-      'I trained an LSTM model on a Hindi corpus and optimized inference for low-latency predictions.',
-      'I built a FastAPI backend to serve the model and a Streamlit UI for live interaction.',
-    ],
-    outcome: 'End-to-end ML pipeline: data preprocessing, model training, API serving, and cloud deployment.',
-    demonstrates: ['NLP pipelines', 'Model serving', 'API design', 'Cloud deployment'],
-    techStack: [
-      { name: 'Python', icon: SiPython },
-      { name: 'TensorFlow', icon: SiTensorflow },
-      { name: 'PyTorch', icon: SiPytorch },
-      { name: 'FastAPI', icon: SiFastapi },
-      { name: 'MongoDB', icon: SiMongodb },
-    ],
+    name: 'Hindi Next Word Prediction',
+    problemStatement: 'Hindi typing tools lacked low-latency next-word prediction for practical usage.',
+    solves: 'Delivers real-time predictions through an API-backed NLP inference service.',
+    techSummary: 'Python, TensorFlow, FastAPI, Streamlit, MongoDB.',
+    impactOrLearning: 'Built an end-to-end ML pipeline from preprocessing to serving and deployment.',
+    techTags: ['Python', 'TensorFlow', 'FastAPI', 'NLP', 'MongoDB'],
     links: {
-      demo: '#',
       github: '#',
-      caseStudy: '#',
+      demo: '#',
     },
-    highlight: 'ai',
   },
   {
-    title: 'PetBot – AI Chatbot for Pet Care',
-    problem: 'Pet owners lacked a quick, reliable source for common pet care questions.',
-    whatIBuilt: [
-      'I fine-tuned GPT-2 on pet care Q&A data and wrapped it in a FastAPI service with rate limiting.',
-      'I containerized the app with Docker and deployed to AWS with health checks and logging.',
-    ],
-    outcome: 'Production API serving 50+ req/min with <200ms response time, fully containerized.',
-    demonstrates: ['LLM fine-tuning', 'Containerization', 'AWS deployment', 'API hardening'],
-    techStack: [
-      { name: 'Python', icon: SiPython },
-      { name: 'FastAPI', icon: SiFastapi },
-      { name: 'TensorFlow', icon: SiTensorflow },
-      { name: 'Docker', icon: SiDocker },
-      { name: 'Vercel', icon: SiVercel },
-    ],
+    name: 'PetBot AI Assistant',
+    problemStatement: 'Pet owners needed quick, structured answers to common care questions.',
+    solves: 'Serves domain-focused responses through an API with validation and request controls.',
+    techSummary: 'Python, FastAPI, GPT-2 fine-tuning, Docker, AWS.',
+    impactOrLearning: 'Learned practical API hardening, container deployment, and model-serving constraints.',
+    techTags: ['Python', 'FastAPI', 'Docker', 'AWS', 'LLM'],
     links: {
-      demo: '#',
       github: '#',
-      caseStudy: '#',
+      demo: '#',
     },
-    highlight: 'deployment',
   },
 ]
 
-const highlightColors = {
-  fullstack: 'from-blue-500/20 to-cyan-500/20',
-  ai: 'from-purple-500/20 to-pink-500/20',
-  deployment: 'from-green-500/20 to-emerald-500/20',
-}
-
 export function Projects() {
   return (
-    <Section id="projects" title="Featured Projects" subtitle="Full-stack systems with thoughtful architecture and scalable design">
+    <Section
+      id="projects"
+      title="Featured Projects"
+      subtitle="Selected systems built with production-oriented engineering practices"
+    >
       <motion.div
         variants={staggerContainer}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: '-50px' }}
-        className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
-        {PROJECTS.map((project, index) => (
-          <motion.div key={project.title} variants={fadeInUpCard}>
-            <Card disableInitialAnimation className="h-full flex flex-col p-0 overflow-hidden group bg-background/50">
-              {/* Highlight gradient overlay */}
-              <div className={`h-0.5 bg-gradient-to-r ${highlightColors[project.highlight]}`} />
-              
-              <div className="p-5 md:p-6 flex flex-col flex-1">
-                {/* Project Title */}
-                <h3 className="text-xl md:text-2xl font-semibold mb-3 text-foreground leading-tight tracking-tight">
-                  {project.title}
-                </h3>
+        {PROJECTS.map((project) => (
+          <motion.article key={project.name} variants={fadeInUpCard}>
+            <div className="h-full p-6 rounded-2xl border border-slate-800 hover:border-blue-500 hover:shadow-xl transition-all duration-300 flex flex-col gap-4 bg-slate-900">
+              <h3 className="text-xl font-medium text-slate-100">{project.name}</h3>
 
-                {/* Problem Statement */}
-                <p className="text-xs font-medium text-muted-foreground mb-2">
-                  <span className="text-foreground/80">Problem:</span> {project.problem}
-                </p>
+              <p className="text-sm text-slate-400">{project.problemStatement}</p>
 
-                {/* What I Built */}
-                <ul className="text-xs text-muted-foreground mb-3 space-y-1 leading-relaxed">
-                  {project.whatIBuilt.map((line, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-primary/70 shrink-0">•</span>
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </ul>
+              <ul className="space-y-2 text-sm text-slate-400 list-disc list-inside marker:text-blue-400">
+                <li>{project.solves}</li>
+                <li>{project.techSummary}</li>
+                <li>{project.impactOrLearning}</li>
+              </ul>
 
-                {/* System Design & Engineering Outcome */}
-                <p className="text-xs text-foreground/80 mb-3 p-2 rounded-xl bg-secondary/20 border border-border/40 shadow-sm">
-                  <span className="font-medium">System Design:</span> {project.outcome}
-                </p>
-
-                {/* Tech Stack Badges */}
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {project.techStack.map((tech) => {
-                    const Icon = tech.icon
-                    return (
-                      <motion.div
-                        key={tech.name}
-                        whileHover={{ scale: 1.02 }}
-                        className="flex items-center gap-1 px-2 py-1 rounded-xl bg-secondary/30 border border-border/40 text-[11px] font-medium shadow-sm"
-                      >
-                        <Icon className="w-3 h-3 text-primary/70" />
-                        <span className="text-foreground/80">{tech.name}</span>
-                      </motion.div>
-                    )
-                  })}
-                </div>
-
-                {/* Demonstrates */}
-                <p className="text-[11px] text-muted-foreground mb-4">
-                  <span className="font-semibold text-foreground/70">Demonstrates:</span>{' '}
-                  {project.demonstrates.join(' · ')}
-                </p>
-
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-2 mt-auto">
-                  {project.links.demo && (
-                    <Button
-                      href={project.links.demo}
-                      variant="primary"
-                      size="sm"
-                      className="flex-1 w-full sm:w-auto"
-                    >
-                      <FiExternalLink className="w-4 h-4 mr-1.5" />
-                      Live Demo
-                    </Button>
-                  )}
-                  {project.links.github && (
-                    <Button
-                      href={project.links.github}
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 w-full sm:w-auto"
-                    >
-                      <FiGithub className="w-4 h-4 mr-1.5" />
-                      GitHub
-                    </Button>
-                  )}
-                  {project.links.caseStudy && (
-                    <Button
-                      href={project.links.caseStudy}
-                      variant="ghost"
-                      size="sm"
-                      className="flex-1 w-full sm:w-auto"
-                    >
-                      <FiFileText className="w-4 h-4 mr-1.5" />
-                      Case Study
-                    </Button>
-                  )}
-                </div>
+              <div className="flex flex-wrap gap-2">
+                {project.techTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-1 text-xs rounded-lg border border-slate-700 bg-slate-800 text-slate-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
-            </Card>
-          </motion.div>
+
+              <div className="flex flex-col sm:flex-row gap-2 mt-auto">
+                <Button href={project.links.github} variant="outline" size="sm" className="flex-1">
+                  <FiGithub className="w-4 h-4 mr-1.5" />
+                  GitHub
+                </Button>
+                <Button href={project.links.demo} variant="primary" size="sm" className="flex-1">
+                  <FiExternalLink className="w-4 h-4 mr-1.5" />
+                  Live Demo
+                </Button>
+              </div>
+            </div>
+          </motion.article>
         ))}
       </motion.div>
     </Section>
   )
 }
-

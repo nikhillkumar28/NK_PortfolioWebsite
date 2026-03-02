@@ -24,12 +24,12 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
 
     const variants = {
       primary:
-        'bg-primary text-primary-foreground hover:bg-primary/90 border border-primary shadow-sm',
+        'bg-blue-600 hover:bg-blue-500 text-white border border-blue-600 rounded-xl shadow-sm transition-colors duration-300',
       secondary:
-        'bg-transparent text-foreground border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary',
+        'bg-transparent text-slate-900 dark:text-slate-100 border border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-colors duration-300',
       outline:
-        'bg-transparent text-foreground border border-border hover:bg-primary hover:text-primary-foreground hover:border-primary',
-      ghost: 'text-muted-foreground hover:text-foreground hover:bg-accent/10 border border-transparent',
+        'bg-transparent text-slate-900 dark:text-slate-100 border border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-colors duration-300',
+      ghost: 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-800/60 border border-transparent transition-colors duration-300',
     }
 
     const sizes = {
