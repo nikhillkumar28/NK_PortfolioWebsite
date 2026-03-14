@@ -56,6 +56,18 @@ const PROJECTS: Project[] = [
       demo: '#',
     },
   },
+  {
+    name: 'Public Grievance Portal',
+    problemStatement: 'NA',
+    solves: 'Loading..',
+    techSummary: 'Next.js, React, TypeScript, Node.js API routes, MongoDB, Tailwind CSS.',
+    impactOrLearning: 'Loading..',
+    techTags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'MongoDB'],
+    links: {
+      github: '#',
+      demo: '#',
+    },
+  },
 ]
 
 export function Projects() {
@@ -74,12 +86,12 @@ export function Projects() {
       >
         {PROJECTS.map((project) => (
           <motion.article key={project.name} variants={fadeInUpCard}>
-            <div className="h-full p-6 rounded-2xl border border-slate-800 hover:border-blue-500 hover:shadow-xl transition-all duration-300 flex flex-col gap-4 bg-slate-900">
-              <h3 className="text-xl font-medium text-slate-100">{project.name}</h3>
+            <div className="card-base card-hover h-full p-6 flex flex-col gap-4">
+              <h3 className="text-xl font-medium text-foreground">{project.name}</h3>
 
-              <p className="text-sm text-slate-400">{project.problemStatement}</p>
+              <p className="text-sm text-muted-foreground">{project.problemStatement}</p>
 
-              <ul className="space-y-2 text-sm text-slate-400 list-disc list-inside marker:text-blue-400">
+              <ul className="space-y-2 text-sm text-muted-foreground list-disc list-inside marker:text-primary">
                 <li>{project.solves}</li>
                 <li>{project.techSummary}</li>
                 <li>{project.impactOrLearning}</li>
@@ -89,7 +101,7 @@ export function Projects() {
                 {project.techTags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 text-xs rounded-lg border border-slate-700 bg-slate-800 text-slate-300"
+                    className="px-2.5 py-1 text-xs rounded-lg border border-[hsl(var(--color-chip-border))] bg-[hsl(var(--color-chip))] text-[hsl(var(--color-chip-foreground))]"
                   >
                     {tag}
                   </span>

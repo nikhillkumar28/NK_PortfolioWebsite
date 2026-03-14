@@ -110,7 +110,7 @@ export function LearningGrowth() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {/* Backend Skills */}
           <motion.div variants={fadeInUpCard}>
-            <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
+            <Card disableInitialAnimation className="h-full bg-card border-border">
               <div className="flex items-center gap-2 mb-4">
                 <FiCode className="w-5 h-5 text-primary" />
                 <h3 className="text-lg font-medium text-foreground">Backend Systems</h3>
@@ -141,7 +141,7 @@ export function LearningGrowth() {
 
           {/* ML Concepts */}
           <motion.div variants={fadeInUpCard}>
-            <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
+            <Card disableInitialAnimation className="h-full bg-card border-border">
               <div className="flex items-center gap-2 mb-4">
                 <FiZap className="w-5 h-5 text-primary" />
                 <h3 className="text-lg font-medium text-foreground">ML Concepts</h3>
@@ -172,7 +172,7 @@ export function LearningGrowth() {
 
           {/* Tools & Frameworks */}
           <motion.div variants={fadeInUpCard}>
-            <Card disableInitialAnimation className="h-full bg-secondary/30 border-border/50">
+            <Card disableInitialAnimation className="h-full bg-card border-border">
               <div className="flex items-center gap-2 mb-4">
                 <FiTrendingUp className="w-5 h-5 text-primary" />
                 <h3 className="text-lg font-medium text-foreground">Tools & Frameworks</h3>

@@ -82,20 +82,20 @@ const demoTypeConfig = {
   streamlit: {
     icon: SiStreamlit,
     label: 'Streamlit',
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-500/10 border-blue-500/20',
+    color: 'text-secondary',
+    bgColor: 'bg-[hsl(var(--color-chip))] border-[hsl(var(--color-chip-border))]',
   },
   fastapi: {
     icon: SiFastapi,
     label: 'FastAPI',
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-500/10 border-blue-500/20',
+    color: 'text-secondary',
+    bgColor: 'bg-[hsl(var(--color-chip))] border-[hsl(var(--color-chip-border))]',
   },
   webapp: {
     icon: FiServer,
     label: 'Web App',
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-500/10 border-blue-500/20',
+    color: 'text-secondary',
+    bgColor: 'bg-[hsl(var(--color-chip))] border-[hsl(var(--color-chip-border))]',
   },
 }
 
@@ -104,7 +104,7 @@ export function LiveDemos() {
     <Section
       id="demos"
       title="Live Demos"
-      subtitle="Production systems running in the cloud — test them now"
+      subtitle="Production systems running in the cloud - test them now"
     >
       <motion.div
         variants={staggerContainer}
@@ -158,7 +158,7 @@ export function LiveDemos() {
                   </p>
 
                   {/* Deployment & System Info Strip */}
-                  <div className="mb-4 p-3 rounded-xl bg-secondary/30 border border-border/50 shadow-sm">
+                  <div className="mb-4 p-3 rounded-xl bg-muted border border-border/50 shadow-sm">
                     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
                       {/* App Nature */}
                       <div className="flex items-center gap-1.5">
@@ -212,7 +212,7 @@ export function LiveDemos() {
                 </div>
 
                 {/* Subtle gradient overlay for "live" feel */}
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-800/20 via-transparent to-blue-500/10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Card>
             </motion.div>
           )
@@ -232,7 +232,7 @@ export function LiveDemos() {
             <FiActivity className="w-4 h-4 text-primary" />
             All demos are production-ready, deployed systems
           </span>
-          {' • '}
+          {' - '}
           <span>Not mockups or prototypes</span>
         </p>
       </motion.div>

@@ -58,11 +58,11 @@ export function Skills() {
       >
         {SKILL_GROUPS.map((group) => (
           <motion.div key={group.title} variants={fadeInUpCard}>
-            <div className="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full">
-              <h3 className="text-xl font-medium text-slate-100 mb-4">{group.title}</h3>
+            <div className="card-base card-hover p-6 h-full">
+              <h3 className="text-xl font-medium text-foreground mb-4">{group.title}</h3>
               <ul className="space-y-3 list-disc list-inside">
                 {group.capabilities.map((capability) => (
-                  <li key={capability} className="text-base leading-relaxed text-slate-400 marker:text-blue-400">
+                  <li key={capability} className="text-base leading-relaxed text-muted-foreground marker:text-primary">
                     {capability}
                   </li>
                 ))}
@@ -74,4 +74,3 @@ export function Skills() {
     </Section>
   )
 }
-

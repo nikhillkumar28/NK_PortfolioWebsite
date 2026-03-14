@@ -47,7 +47,7 @@ export function InternshipReadiness() {
         viewport={{ once: true, margin: '-50px' }}
       >
         <motion.div variants={fadeInUp}>
-          <Card className="p-5 md:p-6 bg-primary/5 border-primary/20">
+          <Card className="p-5 md:p-6 bg-card border-border">
             {/* Header */}
             <div className="flex items-center gap-2.5 mb-5">
                 <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 shadow-sm">

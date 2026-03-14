@@ -45,6 +45,12 @@ const CERTIFICATIONS: Certification[] = [
     year: 2025,
     credentialUrl: '#',
   },
+  {
+    title: 'ReactJS',
+    organization: 'HackerRank',
+    year: 2026,
+    credentialUrl: '#',
+  }
 ]
 
 export function IndustryCertifications() {

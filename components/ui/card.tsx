@@ -15,8 +15,8 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <motion.div
         ref={ref}
         className={cn(
-          'rounded-xl border !border-slate-200 dark:!border-slate-800 !bg-slate-100 dark:!bg-slate-900 p-4 md:p-5 shadow-sm',
-          hover && 'hover:border-blue-400/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300',
+          'card-base p-4 md:p-5',
+          hover && 'card-hover',
           className
         )}
         initial={disableInitialAnimation ? undefined : { opacity: 0, y: 20 }}

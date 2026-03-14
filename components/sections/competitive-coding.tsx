@@ -36,7 +36,7 @@ const PROFILES: ProfileCard[] = [
       { label: 'Global Rank', value: 'Top 10%' },
     ],
     profileUrl: 'https://leetcode.com/u/nikhilkumarnik28/',
-    accentColor: 'text-blue-400',
+    accentColor: 'text-primary',
   },
   {
     platform: 'HackerRank',
@@ -48,7 +48,7 @@ const PROFILES: ProfileCard[] = [
       { label: 'Badges Earned', value: '3' },
     ],
     profileUrl: 'https://www.hackerrank.com/profile/nikhillkumar28',
-    accentColor: 'text-blue-400',
+    accentColor: 'text-primary',
   },
   {
     platform: 'GitHub',
@@ -60,11 +60,11 @@ const PROFILES: ProfileCard[] = [
       { label: 'Contributions', value: '100+' },
     ],
     profileUrl: 'https://github.com/nikhillkumar28',
-    accentColor: 'text-slate-300',
+    accentColor: 'text-secondary',
   },
   {
-    platform: 'Codeforces',
-    username: 'yourusername',
+    platform: 'InterviewBit',
+    username: 'nikhilkumar28',
     icon: SiCodeforces,
     stats: [
       { label: 'Problems Solved', value: '50+' },
@@ -72,7 +72,7 @@ const PROFILES: ProfileCard[] = [
       { label: 'Max Rating', value: 'NA' },
     ],
     profileUrl: 'https://codeforces.com/yourusername',
-    accentColor: 'text-blue-400',
+    accentColor: 'text-primary',
   },
 ]
 

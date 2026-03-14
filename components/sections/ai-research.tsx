@@ -25,7 +25,7 @@ export function AiResearch() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10">
           {/* NLP Models Built */}
           <motion.div variants={fadeInUpCard}>
-            <Card disableInitialAnimation className="h-full p-5 md:p-6 bg-secondary/40 border-border/50">
+            <Card disableInitialAnimation className="h-full p-5 md:p-6 bg-card border-border">
               <h3 className="text-lg md:text-xl font-medium mb-3 flex items-center gap-2">
                 <FiCpu className="w-4 h-4 text-primary" />
                 NLP Models Built
@@ -54,11 +54,11 @@ export function AiResearch() {
                 </li>
               </ul>
               <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-sm">
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-xl bg-[hsl(var(--color-chip))] text-[hsl(var(--color-chip-foreground))] border border-[hsl(var(--color-chip-border))] shadow-sm">
                   <SiTensorflow className="w-3.5 h-3.5" />
                   TensorFlow
                 </span>
-                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-xl bg-primary/10 text-primary border border-primary/20 shadow-sm">
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-xl bg-[hsl(var(--color-chip))] text-[hsl(var(--color-chip-foreground))] border border-[hsl(var(--color-chip-border))] shadow-sm">
                   <SiPytorch className="w-3.5 h-3.5" />
                   PyTorch
                 </span>
@@ -68,7 +68,7 @@ export function AiResearch() {
 
           {/* Transformer & Embeddings */}
           <motion.div variants={fadeInUpCard}>
-            <Card disableInitialAnimation className="h-full p-5 md:p-6 bg-secondary/40 border-border/50">
+            <Card disableInitialAnimation className="h-full p-5 md:p-6 bg-card border-border">
               <h3 className="text-lg md:text-xl font-medium mb-3 flex items-center gap-2">
                 <FiMessageSquare className="w-4 h-4 text-primary" />
                 Transformer & Embedding Work

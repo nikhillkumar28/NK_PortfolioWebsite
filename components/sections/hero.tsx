@@ -14,7 +14,7 @@ export function Hero() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="relative py-16 md:py-24 bg-gradient-to-b from-white via-white to-slate-100 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 transition-colors duration-300"
+      className="relative py-16 md:py-24 bg-gradient-to-b from-background via-background to-muted transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -27,7 +27,7 @@ export function Hero() {
                Full-Stack Developer | Backend &amp; ML
             </h2>
 
-            <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400">
+            <p className="text-base leading-relaxed text-muted-foreground">
               I build backend-focused web applications with clean APIs, reliable data handling, and practical ML integration.
               I focus on production-ready engineering with maintainable architecture and clear system design.
             </p>
@@ -35,13 +35,13 @@ export function Hero() {
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
                 href="#projects"
-                className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl transition"
+                className="bg-primary text-primary-foreground hover:bg-[hsl(var(--color-primary-hover))] px-6 py-3 rounded-xl transition-colors duration-300"
               >
                 View Projects
               </a>
               <a
                 href="/resume.pdf"
-                className="border border-slate-700 text-slate-900 dark:text-slate-100 px-6 py-3 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-300"
+                className="border border-border text-muted-foreground px-6 py-3 rounded-xl hover:bg-muted transition-colors duration-300"
               >
                 Download Resume
               </a>
@@ -49,7 +49,7 @@ export function Hero() {
           </div>
 
           <div className="flex justify-center md:justify-end">
-            <div className="w-full max-w-[340px] rounded-2xl overflow-hidden shadow-md bg-slate-100 dark:bg-slate-900 transition-colors duration-300">
+            <div className="w-full max-w-[340px] rounded-2xl overflow-hidden shadow-md bg-card border border-border transition-colors duration-300">
               {!imageError ? (
                 <img
                   src="/profile.jpeg"
@@ -69,8 +69,7 @@ export function Hero() {
 
       {/* Subtle bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 border-t border-slate-800" />
+      <div className="absolute bottom-0 left-0 right-0 border-t border-border" />
     </motion.section>
   )
 }
-

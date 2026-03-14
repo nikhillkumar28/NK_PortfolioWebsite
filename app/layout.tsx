@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Portfolio | AI/ML Developer',
-    template: '%s | Portfolio',
+    default: "Nikhil's Portfolio",
+    template: "%s | Nikhil's Portfolio",
   },
   description: 'Portfolio of an AI, NLP, and ML developer specializing in building and deploying real machine learning models.',
   keywords: ['AI', 'Machine Learning', 'NLP', 'Deep Learning', 'ML Engineer', 'Data Science'],
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Portfolio',
-    title: 'Portfolio | AI/ML Developer',
+    title: "Nikhil's Portfolio",
     description: 'Portfolio of an AI, NLP, and ML developer specializing in building and deploying real machine learning models.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio | AI/ML Developer',
+    title: "Nikhil's Portfolio",
     description: 'Portfolio of an AI, NLP, and ML developer specializing in building and deploying real machine learning models.',
   },
   robots: {
@@ -63,7 +63,7 @@ export default function RootLayout({
               (function() {
                 try {
                   var saved = localStorage.getItem('theme');
-                  var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var isDark = saved ? saved === 'dark' : true;
                   document.documentElement.classList.toggle('dark', isDark);
                 } catch (e) {}
               })();
@@ -71,7 +71,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground`}
+      >
         <ThemeProvider>
           {children}
         </ThemeProvider>

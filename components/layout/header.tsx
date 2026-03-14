@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useEffect, useMemo, useState } from 'react'
 import { useTheme } from '@/components/providers/theme-provider'
 import { Sun, Moon } from 'lucide-react'
 
@@ -18,17 +19,38 @@ const NAV_ITEMS = [
 ]
 
 export function Header({ className }: HeaderProps) {
-  // Gracefully handle theme context
-  let theme: 'dark' | 'light' = 'dark'
-  let toggleTheme: () => void = () => {}
-  
-  try {
-    const themeContext = useTheme()
-    theme = themeContext.theme
-    toggleTheme = themeContext.toggleTheme
-  } catch (error) {
-    // Theme provider not available, use default
-  }
+  // Theme context
+  const { theme, toggleTheme } = useTheme()
+  const [activeSection, setActiveSection] = useState('home')
+
+  const sectionIds = useMemo(
+    () => NAV_ITEMS.map((item) => item.href.replace('/#', '')),
+    []
+  )
+
+  useEffect(() => {
+    const getActiveSection = () => {
+      const offset = 120
+      let current = 'home'
+      for (const id of sectionIds) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        const top = el.getBoundingClientRect().top
+        if (top - offset <= 0) {
+          current = id
+        }
+      }
+      setActiveSection(current)
+    }
+
+    getActiveSection()
+    window.addEventListener('scroll', getActiveSection, { passive: true })
+    window.addEventListener('resize', getActiveSection)
+    return () => {
+      window.removeEventListener('scroll', getActiveSection)
+      window.removeEventListener('resize', getActiveSection)
+    }
+  }, [sectionIds])
 
   return (
     <motion.header
@@ -38,7 +60,7 @@ export function Header({ className }: HeaderProps) {
       className={`fixed inset-x-0 top-0 z-50 ${className ?? ''}`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-5">
-        <div className="flex items-center justify-between gap-3 border border-slate-300/70 dark:border-slate-700/70 rounded-full bg-white/45 dark:bg-slate-950/45 px-3 sm:px-4 md:px-6 py-2.5 md:py-3 backdrop-blur-xl supports-[backdrop-filter]:bg-white/35 dark:supports-[backdrop-filter]:bg-slate-950/35 shadow-[0_8px_30px_rgba(2,6,23,0.18)] transition-all duration-300">
+        <div className="flex items-center justify-between gap-3 rounded-full border border-border/80 bg-[hsl(var(--color-navbar))] px-3 sm:px-4 md:px-6 py-2.5 md:py-3 backdrop-blur-xl supports-[backdrop-filter]:bg-[hsl(var(--color-navbar))] shadow-[0_8px_30px_rgba(15,23,42,0.08)] transition-all duration-300">
           {/* Logo/Brand */}
           <Link
             href="/"
@@ -51,12 +73,17 @@ export function Header({ className }: HeaderProps) {
           </Link>
 
           {/* Navigation Links */}
-          <div className="hidden md:flex items-center gap-5 text-sm text-slate-400">
+          <div className="hidden md:flex items-center gap-5 text-sm text-foreground">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="hover:text-blue-400 transition-colors duration-300"
+                className={`transition-colors duration-300 ${
+                  activeSection === item.href.replace('/#', '')
+                    ? 'text-primary'
+                    : 'text-foreground hover:text-primary'
+                }`}
+                aria-current={activeSection === item.href.replace('/#', '') ? 'page' : undefined}
               >
                 {item.label}
               </Link>
@@ -68,7 +95,7 @@ export function Header({ className }: HeaderProps) {
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100 transition-colors duration-300"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-foreground hover:bg-card transition-colors duration-300"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
@@ -92,9 +119,5 @@ export function Header({ className }: HeaderProps) {
     </motion.header>
   )
 }
-
-
-
-
 
 

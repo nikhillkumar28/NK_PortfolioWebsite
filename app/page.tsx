@@ -13,7 +13,7 @@ import { ResumeContact } from '@/components/sections/resume-contact'
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <main className="min-h-screen overflow-x-hidden transition-colors duration-300">
       <Header />
       <div className="pt-20 md:pt-24 space-y-16 md:space-y-24">
         {/* 1. Hero - First impression & student status */}
