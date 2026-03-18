@@ -1,16 +1,12 @@
 # Portfolio Website
-
 A modern, high-performance portfolio website built with Next.js, Tailwind CSS, and Framer Motion.
-
 ## Tech Stack 
-
 - Next.js 14
 - TypeScript
 - Tailwind CSS
 - Framer Motion
 
 ## Project Structure
-
 ```
 Portfolio/
 ├── app/                    # Next.js App Router
