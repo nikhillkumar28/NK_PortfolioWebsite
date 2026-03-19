@@ -15,7 +15,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <motion.div
         ref={ref}
         className={cn(
-          'card-base p-4 md:p-5',
+          'card-base p-4 md:p-5 group',
           hover && 'card-hover',
           className
         )}

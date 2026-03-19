@@ -69,10 +69,10 @@ export function IndustryCertifications() {
       >
         {CERTIFICATIONS.map((certification) => (
           <motion.div key={certification.title} variants={fadeInUpCard}>
-            <Card disableInitialAnimation>
-              {/* Certification Header */}
-              <div className="mb-4">
-                <h3 className="text-lg md:text-xl font-medium text-foreground leading-tight mb-1">
+              <Card disableInitialAnimation>
+                {/* Certification Header */}
+                <div className="mb-4">
+                <h3 className="text-lg md:text-xl font-medium text-foreground leading-tight mb-1 transition-all duration-200 group-hover:text-primary group-hover:translate-x-1">
                   {certification.title}
                 </h3>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">

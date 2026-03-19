@@ -14,7 +14,8 @@ const NAV_ITEMS = [
   { label: 'Home', href: '/#home' },
   { label: 'Projects', href: '/#projects' },
   { label: 'Skills', href: '/#skills' },
-  { label: 'Certificates', href: '/#certifications' },
+  { label: 'Experience', href: '/#experience-achievements' },
+  { label: 'Certifications', href: '/#certifications' },
   { label: 'Contact', href: '/#contact' },
 ]
 
@@ -119,5 +120,3 @@ export function Header({ className }: HeaderProps) {
     </motion.header>
   )
 }
-
-

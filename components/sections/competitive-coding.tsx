@@ -31,7 +31,7 @@ const PROFILES: ProfileCard[] = [
     username: 'nikhilkumarnik28',
     icon: SiLeetcode,
     stats: [
-      { label: 'Problems Solved', value: '120+' },
+      { label: 'Problems Solved', value: '150+' },
       { label: 'Contest Rating', value: '1650' },
       { label: 'Global Rank', value: 'Top 10%' },
     ],
@@ -57,7 +57,7 @@ const PROFILES: ProfileCard[] = [
     stats: [
       { label: 'Public Repos', value: '20+' },
       { label: 'Total Stars', value: '10+' },
-      { label: 'Contributions', value: '100+' },
+      { label: 'Contributions', value: '130+' },
     ],
     profileUrl: 'https://github.com/nikhillkumar28',
     accentColor: 'text-secondary',
@@ -78,8 +78,8 @@ const PROFILES: ProfileCard[] = [
 
 export function CompetitiveCoding() {
   return (
-    <Section 
-      id="competitive-coding" 
+    <Section
+      id="competitive-coding"
       title="Competitive Coding & Developer Profiles"
       subtitle="My coding platform profiles and problem-solving achievements"
     >
@@ -95,13 +95,12 @@ export function CompetitiveCoding() {
           return (
             <motion.div key={profile.platform} variants={fadeInUpCard}>
               <Card disableInitialAnimation>
-                {/* Header */}
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2.5 rounded-lg bg-primary/5 border border-primary/20">
                     <PlatformIcon className={`w-5 h-5 ${profile.accentColor}`} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium text-foreground">
+                    <h3 className="text-lg font-medium text-foreground transition-all duration-200 group-hover:text-primary group-hover:translate-x-1">
                       {profile.platform}
                     </h3>
                     <p className="text-sm text-muted-foreground">
@@ -110,7 +109,6 @@ export function CompetitiveCoding() {
                   </div>
                 </div>
 
-                {/* Stats */}
                 <div className="space-y-2 mb-5">
                   {profile.stats.map((stat, index) => (
                     <div key={index} className="flex justify-between items-center">
@@ -124,7 +122,6 @@ export function CompetitiveCoding() {
                   ))}
                 </div>
 
-                {/* Action Button */}
                 <div className="pt-3 border-t border-border/50">
                   <Button
                     href={profile.profileUrl}

@@ -16,30 +16,30 @@ const Section = forwardRef<HTMLElement, SectionProps>(
     return (
       <motion.section
         ref={ref}
-        className={cn('py-16 md:py-24', className)}
-        initial={{ opacity: 0, y: 20 }}
+        className={cn('py-16', className)}
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         {...props}
       >
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           {(title || subtitle) && (
             <motion.div
-              className="mb-12 text-left"
+              className="mb-12 text-left space-y-2"
               variants={fadeInUpHeading}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, margin: '-50px' }}
             >
               {title && (
-                <h2 className="text-3xl font-medium tracking-tight mb-4 md:mb-5 text-foreground">
+                <h2 className="text-3xl font-semibold tracking-tight text-foreground">
                   {title}
                 </h2>
               )}
               {subtitle && (
                 <motion.p
-                  className="subtitle leading-relaxed"
+                  className="subtitle leading-relaxed text-muted-foreground"
                   variants={fadeInUpHeading}
                   initial="initial"
                   whileInView="animate"
