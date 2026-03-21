@@ -1,11 +1,25 @@
 import { NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import mongoose, { Schema } from 'mongoose'
+import { connectToDatabase } from '@/lib/mongoose'
 
 type Payload = {
   name: string
   email: string
   message: string
 }
+
+const ContactSchema = new Schema(
+  {
+    name: { type: String, required: true, trim: true },
+    email: { type: String, required: true, trim: true },
+    message: { type: String, required: true, trim: true },
+  },
+  { timestamps: true }
+)
+
+const Contact =
+  (mongoose.models.Contact as mongoose.Model<{ name: string; email: string; message: string }>) ||
+  mongoose.model('Contact', ContactSchema)
 
 type RateRecord = {
   lastRequestAt: number
@@ -64,28 +78,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Invalid message' }, { status: 400 })
     }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: process.env.SMTP_SECURE === 'true',
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    })
-
-    const toEmail = process.env.CONTACT_TO_EMAIL
-    if (!toEmail) {
-      return NextResponse.json({ error: 'Missing CONTACT_TO_EMAIL' }, { status: 500 })
-    }
-
-    await transporter.sendMail({
-      from: `Portfolio Contact <${process.env.SMTP_USER}>`,
-      to: toEmail,
-      replyTo: email,
-      subject: `New Contact: ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    })
+    await connectToDatabase()
+    await Contact.create({ name: name.trim(), email: email.trim(), message: message.trim() })
 
     return NextResponse.json({ success: true })
   } catch (error) {
