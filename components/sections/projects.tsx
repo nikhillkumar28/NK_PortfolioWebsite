@@ -28,7 +28,7 @@ const PROJECTS: Project[] = [
     impactOrLearning: 'Automated routing to departments',
     techTags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'MongoDB'],
     links: {
-      github: '#',
+      github: 'https://github.com/nikhillkumar28/Public_Grievance',
       demo: '#',
     },
   },
@@ -40,7 +40,7 @@ const PROJECTS: Project[] = [
     impactOrLearning: 'End-to-end ML pipeline',
     techTags: ['Python', 'TensorFlow', 'FastAPI', 'NLP', 'MongoDB'],
     links: {
-      github: '#',
+      github: 'https://github.com/nikhillkumar28/hindi-next-word-api',
       demo: '#',
     },
   },
@@ -52,7 +52,7 @@ const PROJECTS: Project[] = [
     impactOrLearning: 'Reliable CRUD workflows',
     techTags: ['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL'],
     links: {
-      github: '#',
+      github: 'https://github.com/nikhillkumar28/web-blog',
       demo: '#',
     },
   },
@@ -64,7 +64,7 @@ const PROJECTS: Project[] = [
     impactOrLearning: 'API hardening and deployment',
     techTags: ['Python', 'FastAPI', 'Docker', 'AWS', 'LLM'],
     links: {
-      github: '#',
+      github: 'https://github.com/nikhillkumar28/CB_PC_NK',
       demo: '#',
     },
   },

@@ -1,6 +1,7 @@
 import { Hero } from '@/components/sections/hero'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
+import { About } from '@/components/sections/about'
 import { Skills } from '@/components/sections/skills'
 import { ExperienceAchievements } from '@/components/sections/experience-achievements'
 import { GithubActivity } from '@/components/sections/GithubActivity'
@@ -14,9 +15,11 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-x-hidden transition-colors duration-300">
       <Header />
-      <div className="pt-20 md:pt-24 space-y-8 md:space-y-10">
+      <div className="pt-20 md:pt-24 space-y-4 md:space-y-6">
         {/* 1. Hero - First impression & student status */}
         <Hero />
+        {/* 2. About - Personal intro */}
+        <About />
         {/* 3. Featured Projects - Detailed project showcase */}
         <Projects />
         {/* 4. Skills - Technical competencies */}

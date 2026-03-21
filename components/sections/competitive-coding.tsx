@@ -11,7 +11,7 @@ import {
   SiGithub,
   SiCodeforces,
 } from 'react-icons/si'
-import { FiExternalLink } from 'react-icons/fi'
+import { FiExternalLink, FiStar } from 'react-icons/fi'
 
 interface ProfileCard {
   platform: string
@@ -40,12 +40,12 @@ const PROFILES: ProfileCard[] = [
   },
   {
     platform: 'HackerRank',
-    username: 'nikhillkumar28',
+    username: '@nikhillkumar28',
     icon: SiHackerrank,
     stats: [
       { label: 'Problems Solved', value: '100+' },
-      { label: 'Contest Rating', value: '4 stars' },
-      { label: 'Badges Earned', value: '3' },
+      { label: 'Stars', value: '4⭐' },
+      { label: 'Badges', value: '5' },
     ],
     profileUrl: 'https://www.hackerrank.com/profile/nikhillkumar28',
     accentColor: 'text-primary',
@@ -55,23 +55,23 @@ const PROFILES: ProfileCard[] = [
     username: 'nikhillkumar28',
     icon: SiGithub,
     stats: [
-      { label: 'Public Repos', value: '20+' },
-      { label: 'Total Stars', value: '10+' },
+      { label: 'Public Repos', value: '28+' },
+      { label: 'Total Stars', value: '25+' },
       { label: 'Contributions', value: '130+' },
     ],
     profileUrl: 'https://github.com/nikhillkumar28',
     accentColor: 'text-secondary',
   },
   {
-    platform: 'InterviewBit',
-    username: 'nikhilkumar28',
+    platform: 'GeeksforGeeks',
+    username: '@nikhilkumar0928',
     icon: SiCodeforces,
     stats: [
-      { label: 'Problems Solved', value: '50+' },
-      { label: 'Contest Rating', value: 'NA' },
-      { label: 'Max Rating', value: 'NA' },
+      { label: 'Problems Solved', value: '100+' },
+      { label: 'Coding Score', value: '200+' },
+      { label: 'Global Rank', value: 'Top 10%' },
     ],
-    profileUrl: 'https://codeforces.com/yourusername',
+    profileUrl: 'https://www.geeksforgeeks.org/profile/nikhilkumar0928',
     accentColor: 'text-primary',
   },
 ]
@@ -115,8 +115,11 @@ export function CompetitiveCoding() {
                       <span className="text-sm text-muted-foreground">
                         {stat.label}
                       </span>
-                      <span className="text-sm font-medium text-foreground">
+                      <span className="text-sm font-medium text-foreground inline-flex items-center gap-1.5">
                         {stat.value}
+                        {profile.platform === 'HackerRank' && stat.label === 'Contest Rating' && (
+                          <FiStar className="w-4 h-4 text-amber-400" />
+                        )}
                       </span>
                     </div>
                   ))}

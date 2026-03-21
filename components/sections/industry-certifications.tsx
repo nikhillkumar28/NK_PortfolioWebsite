@@ -19,37 +19,37 @@ const CERTIFICATIONS: Certification[] = [
     title: 'Bits and Bytes of Computer Networking',
     organization: 'Google',
     year: 2024,
-    credentialUrl: '#',
+    credentialUrl: 'https://coursera.org/share/fea9274c8cace812b4abd75dcbe9eb10',
   },
   {
-    title: 'TensorFlow Developer Certificate',
-    organization: 'Google',
-    year: 2024,
-    credentialUrl: '#',
+    title: 'Master Generative AI & Generative AI Tools',
+    organization: 'Udemy',
+    year: 2025,
+    credentialUrl: 'https://drive.google.com/file/d/1jXXurAGVyaeEWuinvoB_pPlFri2jr41O/view?usp=sharing',
   },
   {
-    title: 'Bits and Bytes of Computer Networking',
-    organization: 'Google',
+    title: 'Introduction to Hardware & Operating Systems',
+    organization: 'IBM',
     year: 2024,
-    credentialUrl: '#',
+    credentialUrl: 'https://coursera.org/share/e4a5724630c4e49e8fa634bed31df7a7',
   },
   {
     title: 'Python',
     organization: 'HackerRank',
     year: 2026,
-    credentialUrl: '#',
+    credentialUrl: 'https://www.hackerrank.com/certificates/fc5b556bbcc3',
   },
   {
     title: 'Cloud Computing',
     organization: 'NPTEL',
     year: 2025,
-    credentialUrl: '#',
+    credentialUrl: 'https://drive.google.com/file/d/1z2hzk2-J4H1jRNzOhq17XuHNfuG52WPR/view?usp=sharing',
   },
   {
-    title: 'ReactJS',
+    title: 'JavaScript',
     organization: 'HackerRank',
     year: 2026,
-    credentialUrl: '#',
+    credentialUrl: 'https://www.hackerrank.com/certificates/6bda1378be52',
   }
 ]
 
@@ -59,6 +59,7 @@ export function IndustryCertifications() {
       id="certifications" 
       title="Industry Certifications" 
       subtitle="Professional certifications validating technical expertise"
+      className="pt-6"
     >
       <motion.div
         variants={staggerContainer}

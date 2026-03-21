@@ -93,7 +93,7 @@ export function ResumeContact() {
               <FiArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
             </a>
             <a
-              href="https://linkedin.com/in/nikhillkumar28"
+              href="https://www.linkedin.com/in/nikhillkumar28"
               target="_blank"
               rel="noreferrer"
               className="group inline-flex w-full sm:w-[260px] items-center justify-between card-base card-hover text-foreground px-4 py-3"

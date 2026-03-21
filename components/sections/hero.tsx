@@ -20,29 +20,41 @@ export function Hero() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-5 text-left">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-foreground">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-foreground">
               {BRANDING.name}
             </h1>
 
-            <p className="text-sm md:text-base font-medium tracking-wide text-[hsl(var(--color-subtitle))]">
+            <p className="text-lg md:text-xl font-medium tracking-wide text-gray-400">
               Full-Stack Developer | Backend &amp; ML
             </p>
 
-            <h2 className="text-xl md:text-2xl font-semibold leading-snug text-foreground max-w-xl mx-auto md:mx-0">
-              I build backend-driven web applications with real-world ML integration.
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-snug text-foreground max-w-2xl mx-auto md:mx-0 text-balance">
+              <span className="block">
+                Building scalable{' '}
+                <span className="bg-gradient-to-r from-primary/80 to-primary/40 dark:from-primary dark:to-primary/70 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(99,102,241,0.35)]">
+                  backend
+                </span>{' '}
+                systems
+              </span>
+              <span className="block">
+                with real-world{' '}
+                <span className="bg-gradient-to-r from-primary/80 to-primary/40 dark:from-primary dark:to-primary/70 bg-clip-text text-transparent drop-shadow-[0_2px_12px_rgba(99,102,241,0.35)]">
+                  ML integration
+                </span>
+                .
+              </span>
             </h2>
 
-            <p className="text-sm md:text-base leading-relaxed text-muted-foreground max-w-xl mx-auto md:mx-0">
+            <p className="text-sm md:text-base leading-relaxed text-gray-400 max-w-xl mx-auto md:mx-0">
               <span className="block">Focused on designing scalable APIs, intelligent systems, and production-ready applications.</span>
-              <span className="block">I enjoy solving real-world problems using clean architecture and practical machine learning.</span>
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <a
-                href="#projects"
+                href="https://github.com/nikhillkumar28"
                 className="bg-primary text-primary-foreground hover:bg-[hsl(var(--color-primary-hover))] px-6 py-3 rounded-xl transition-colors duration-300"
               >
-                View Projects
+                Explore My Work
               </a>
               <a
                 href="/resume.pdf"
@@ -52,7 +64,7 @@ export function Hero() {
               </a>
             </div>
 
-            <div className="flex items-center justify-center md:justify-start gap-4 text-foreground">
+            <div className="flex items-center justify-center md:justify-start gap-4 text-foreground mt-2">
               <a
                 href="https://github.com/nikhillkumar28"
                 target="_blank"
@@ -63,7 +75,7 @@ export function Hero() {
                 <FiGithub className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com/in/nikhillkumar28"
+                href="https://www.linkedin.com/in/nikhillkumar28"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border-2 border-[hsl(var(--color-outline))] bg-[hsl(var(--color-card))] shadow-sm hover:border-primary/60 hover:text-primary hover:shadow-md transition-all duration-200 ease-in-out"
@@ -102,7 +114,6 @@ export function Hero() {
 
       {/* Subtle bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 border-t border-border" />
     </motion.section>
   )
 }
